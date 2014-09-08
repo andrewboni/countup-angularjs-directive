@@ -1,0 +1,29 @@
+{
+  "name": "countup-angularjs-directive",
+  "version": "0.1.0",
+  "description": "An AngularJS directive for countUp.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrewboni/countup-angularjs-directive.git"
+  },
+  "keywords": [
+    "countup.js",
+    "angularjs",
+    "directive"
+  ],
+  "author": "Andrew Boni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewboni/countup-angularjs-directive/issues"
+  },
+  "homepage": "https://github.com/andrewboni/countup-angularjs-directive",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-coffee": "^0.11.1",
+    "grunt-contrib-uglify": "^0.5.1"
+  }
+}
