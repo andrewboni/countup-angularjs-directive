@@ -8,10 +8,18 @@ This is an AngularJS directive for the [countUp.js library](http://inorganik.git
 - countUp.js  
 
 # Installation
-Install with NPM:
+Install via Bower:
 ```bash
-npm install countupjs-angularjs-directive
+bower install -S countupjs-angularjs-directive
 ```
+Then, add the module name to your `app.js` or `app.coffee` file:
+```coffeescript
+modules = [
+  'countUp'
+]
+angular.module('myApp', modules).run(...)
+```
+
 
 # Usage
 ```html
