@@ -10,8 +10,13 @@ This is an AngularJS directive for the [countUp.js library](http://inorganik.git
 # Installation
 Install via Bower:
 ```bash
-bower install -S countupjs-angularjs-directive
+bower install -S countup-angularjs-directive
 ```
+or NPM:
+```bash
+npm install countup-angularjs-directive
+```
+
 Then, add the module name to your `app.js` or `app.coffee` file:
 ```coffeescript
 modules = [
@@ -21,6 +26,8 @@ modules = [
 ]
 angular.module('myApp', modules).run(...)
 ```
+
+...and include the file `dist/countup-angularjs-directive.min.js` somewhere on your page, after `angular` and `countUp`.
 
 
 # Usage
