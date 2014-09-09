@@ -15,7 +15,9 @@ bower install -S countupjs-angularjs-directive
 Then, add the module name to your `app.js` or `app.coffee` file:
 ```coffeescript
 modules = [
-  'countUp'
+  ...
+  'ngCountup'
+  ...
 ]
 angular.module('myApp', modules).run(...)
 ```
