@@ -1,7 +1,6 @@
 (function() {
-  angular.directive("countUp", []);
-
-  angular.directive("countUp", function() {
+  'use strict';
+  angular.module('ngCountup', []).directive('countUp', function() {
     return {
       restrict: "A",
       require: "ngModel",
