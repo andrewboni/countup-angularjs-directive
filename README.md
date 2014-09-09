@@ -1,7 +1,11 @@
 Original blog post here: http://www.andrewboni.com/2014/09/03/a-countupjs-angularjs-directive/
 
 # About
-This is an AngularJS directive for the countUp.js library.
+This is an AngularJS directive for the [countUp.js library](http://inorganik.github.io/countUp.js/).
+
+# Dependencies
+- AngularJS
+- countUp.js  
 
 # Installation
 Install with NPM:
