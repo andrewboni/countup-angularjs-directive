@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="../bower_components/countUp.js/countUp.min.js"></script>
+    <script src="../dist/countup-angularjs-directive.min.js"></script>
+</head>
+
+<body ng-controller="AppCtrl">
+
+<h1 ng-repeat="fruit in fruits" count-up ng-model="fruit.count" id="{{ fruit.name }}">
+{{ fruit.count }}
+</h1>
+
+<hr/>
+
+<!--<h1 ng-repeat="fruit in fruits">{{ fruit.name }} {{ fruit.count }}</h1>-->
+
+<hr/>
+
+<!--<h1 count-up id="blah" ng-model="specialfruit.count">0</h1>-->
+<a ng-click="updateCount()">Update count</a>
+</body>
+</html>

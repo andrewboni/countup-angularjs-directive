@@ -3,18 +3,27 @@ angular.module('ngCountup', [])
 .directive 'countUp', ->
   restrict: "A" # For use on attributes only
   require: "ngModel" # Must have an ngModel to get the countUp value from
-  scope: true # Will not create an isolate, child scope. If we put an object here, it will
+#  scope: true # Will not create an isolate, child scope. If we put an object here, it will
+  scope:
+    ngModel: '='
+    id: '@'
   link: (scope, element, attrs) ->
-    numDecimals = 0 # Default to show 0 decimals
-    animationLength = 4 # Default to animate for 4 secs
-
-    if attrs.numDecimals? and attrs.numDecimals >= 0
-      numDecimals = attrs.numDecimals
-    if attrs.animationLength? and attrs.animationLength > 0
-      animationLength = attrs.animationLength
-
+    console.log "scope is ", scope
+    console.log "ngModel is ", scope.ngModel
+#    numDecimals = 0 # Default to show 0 decimals
+#    animationLength = 4 # Default to animate for 4 secs
+#
+#    if attrs.numDecimals? and attrs.numDecimals >= 0
+#      numDecimals = attrs.numDecimals
+#    if attrs.animationLength? and attrs.animationLength > 0
+#      animationLength = attrs.animationLength
+    attrs.$observe 'id', (id) ->
+      scope.id = id
     scope.$watch attrs.ngModel, (newVal, oldVal) ->
-      if !oldVal? then oldVal = 0
-      if newVal? and newVal isnt oldVal
-        new countUp(attrs.id, oldVal, newVal, numDecimals, animationLength).start()
+      console.log "ngModel has changed! #{newVal} #{oldVal}"
+      oldVal ?= 10228
+      newVal ?= 98200
+      if newVal?
+        console.log "running countup now! #{newVal} #{oldVal}"
+        new countUp(scope.id, oldVal, newVal).start()
 

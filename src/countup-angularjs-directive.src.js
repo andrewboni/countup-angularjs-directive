@@ -4,23 +4,27 @@
     return {
       restrict: "A",
       require: "ngModel",
-      scope: true,
+      scope: {
+        ngModel: '=',
+        id: '@'
+      },
       link: function(scope, element, attrs) {
-        var animationLength, numDecimals;
-        numDecimals = 0;
-        animationLength = 4;
-        if ((attrs.numDecimals != null) && attrs.numDecimals >= 0) {
-          numDecimals = attrs.numDecimals;
-        }
-        if ((attrs.animationLength != null) && attrs.animationLength > 0) {
-          animationLength = attrs.animationLength;
-        }
+        console.log("scope is ", scope);
+        console.log("ngModel is ", scope.ngModel);
+        attrs.$observe('id', function(id) {
+          return scope.id = id;
+        });
         return scope.$watch(attrs.ngModel, function(newVal, oldVal) {
+          console.log("ngModel has changed! " + newVal + " " + oldVal);
           if (oldVal == null) {
-            oldVal = 0;
+            oldVal = 10228;
           }
-          if ((newVal != null) && newVal !== oldVal) {
-            return new countUp(attrs.id, oldVal, newVal, numDecimals, animationLength).start();
+          if (newVal == null) {
+            newVal = 98200;
+          }
+          if (newVal != null) {
+            console.log("running countup now! " + newVal + " " + oldVal);
+            return new countUp(scope.id, oldVal, newVal).start();
           }
         });
       }
