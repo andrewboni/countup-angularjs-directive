@@ -5,16 +5,12 @@
       restrict: "A",
       require: "ngModel",
       scope: {
-        ngModel: '=',
-        id: '@'
+        ngModel: '='
       },
       link: function(scope, element, attrs) {
         console.log("scope is ", scope);
         console.log("ngModel is ", scope.ngModel);
-        attrs.$observe('id', function(id) {
-          return scope.id = id;
-        });
-        return scope.$watch(attrs.ngModel, function(newVal, oldVal) {
+        return scope.$parent.$watch(attrs.ngModel, function(newVal, oldVal) {
           console.log("ngModel has changed! " + newVal + " " + oldVal);
           if (oldVal == null) {
             oldVal = 10228;
@@ -24,7 +20,7 @@
           }
           if (newVal != null) {
             console.log("running countup now! " + newVal + " " + oldVal);
-            return new countUp(scope.id, oldVal, newVal).start();
+            return new countUp(attrs.id, oldVal, newVal).start();
           }
         });
       }
