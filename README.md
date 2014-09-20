@@ -29,6 +29,15 @@ angular.module('myApp', modules).run(...)
 
 ...and include the file `dist/countup-angularjs-directive.min.js` somewhere on your page, after `angular` and `countUp`.
 
+Like so:
+```html
+   <head>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+       <script src="js/app.js"></script>
+       <script src="../bower_components/countUp.js/countUp.min.js"></script>
+       <script src="../dist/countup-angularjs-directive.min.js"></script>
+   </head>
+```
 
 # Usage
 ```html
