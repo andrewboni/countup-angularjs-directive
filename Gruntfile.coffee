@@ -9,9 +9,12 @@ module.exports = (grunt) ->
     uglify:
       options:
         banner: "/*! <%= pkg.name %> by <%= pkg.author %> on <%= grunt.template.today(\"dd-mm-yyyy\") %> */\n"
+        compress:
+          drop_console: true
       dist:
         files:
           "dist/<%= pkg.name %>.min.js": ["src/<%= pkg.name %>.src.js"]
+
     watch:
       coffee:
         files: ['src/*.coffee']
@@ -26,5 +29,9 @@ module.exports = (grunt) ->
   grunt.registerTask "build", [
     "coffee:dist"
     "uglify:dist"
+  ]
+  grunt.registerTask "dev", [
+    "build"
+    "watch"
   ]
   return

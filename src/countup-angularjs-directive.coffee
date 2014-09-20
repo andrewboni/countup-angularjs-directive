@@ -10,20 +10,20 @@ angular.module('ngCountup', [])
   link: (scope, element, attrs) ->
     console.log "scope is ", scope
     console.log "ngModel is ", scope.ngModel
-#    numDecimals = 0 # Default to show 0 decimals
-#    animationLength = 4 # Default to animate for 4 secs
-#
-#    if attrs.numDecimals? and attrs.numDecimals >= 0
-#      numDecimals = attrs.numDecimals
-#    if attrs.animationLength? and attrs.animationLength > 0
-#      animationLength = attrs.animationLength
+    numDecimals = 0 # Default to show 0 decimals
+    animationLength = 4 # Default to animate for 4 secs
+
+    if attrs.numDecimals? and attrs.numDecimals >= 0
+      numDecimals = attrs.numDecimals
+    if attrs.animationLength? and attrs.animationLength > 0
+      animationLength = attrs.animationLength
 #    attrs.$observe 'id', (id) ->
 #      scope.id = id
     scope.$parent.$watch attrs.ngModel, (newVal, oldVal) ->
       console.log "ngModel has changed! #{newVal} #{oldVal}"
-      oldVal ?= 10228
-      newVal ?= 98200
+      oldVal ?= 0
+      newVal ?= 0
       if newVal?
         console.log "running countup now! #{newVal} #{oldVal}"
-        new countUp(attrs.id, oldVal, newVal).start()
+        new countUp(attrs.id, oldVal, newVal, numDecimals, animationLength).start()
 
