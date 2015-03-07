@@ -3,7 +3,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON("package.json")
     coffee:
       dist:
-        files: "src/<%= pkg.name %>.src.js": ["src/<%= pkg.name %>.coffee"]
+        files: "dist/<%= pkg.name %>.js": ["src/<%= pkg.name %>.coffee"]
       app:
         files: "examples/js/app.js": ['examples/coffee/app.coffee']
     uglify:
@@ -13,7 +13,7 @@ module.exports = (grunt) ->
           drop_console: true
       dist:
         files:
-          "dist/<%= pkg.name %>.min.js": ["src/<%= pkg.name %>.src.js"]
+          "dist/<%= pkg.name %>.min.js": ["dist/<%= pkg.name %>.js"]
 
     watch:
       coffee:
