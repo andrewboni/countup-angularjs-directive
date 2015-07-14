@@ -20,5 +20,5 @@ angular.module('ngCountup', [])
       newVal ?= 0
       oldVal ?= 0
       if newVal?
-        new countUp(attrs.id, oldVal, newVal, numDecimals, 4, opts).start()
+        new CountUp(attrs.id, oldVal, newVal, numDecimals, 4, opts).start()
       return
