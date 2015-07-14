@@ -21,6 +21,6 @@
     "tests"
   ],
   "dependencies": {
-    "countUp.js": "~1.3.1"
+    "countUp.js": "~1.5.3"
   }
 }

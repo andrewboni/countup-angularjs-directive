@@ -32,7 +32,7 @@ angular.module('myApp', modules).run(...)
 Like so:
 ```html
    <head>
-       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
        <script src="js/app.js"></script>
        <script src="../bower_components/countUp.js/countUp.min.js"></script>
        <script src="../dist/countup-angularjs-directive.min.js"></script>
@@ -52,5 +52,10 @@ Optionally, you can configure the number of decimals and the animation length (i
 <h1 count-up id="opens" ng-model="dynamicStats.opens" data-num-decimals="2" data-animation-length="10"></h1>
 ```
 
-This directive is a work in progress- there are probably a ton of optimzations that can be made. If you have any suggestions, please submit a pull request!
+This directive is a work in progress- there are probably a ton of optimizations that can be made. If you have any suggestions, please submit a pull request!
+
+# Development
+Run `grunt dev` to build/uglify the `dist` files from `src` and watch `src` files for changes. Run `grunt build` to merely build and uglify from `src`.
+
+#MIT License
 

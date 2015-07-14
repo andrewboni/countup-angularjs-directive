@@ -9,13 +9,24 @@
         numDecimals: '='
       },
       link: function(scope, element, attrs) {
-        return scope.$watch("ngModel", function(newVal, oldVal) {
-          if ((newVal != null) && (scope.numDecimals != null)) {
-            if (oldVal == null) {
-              oldVal = 0;
-            }
-            console.log("running countUp, " + newVal + " " + scope.numDecimals + " ");
-            new countUp(attrs.id, oldVal, newVal, scope.numDecimals, 4).start();
+        var numDecimals, opts;
+        opts = {
+          prefix: attrs.prefix || '',
+          suffix: attrs.suffix || ''
+        };
+        numDecimals = 0;
+        if ((attrs.numDecimals != null) && attrs.numDecimals >= 0) {
+          numDecimals = attrs.numDecimals;
+        }
+        return scope.$parent.$watch(attrs.ngModel, function(newVal, oldVal) {
+          if (newVal == null) {
+            newVal = 0;
+          }
+          if (oldVal == null) {
+            oldVal = 0;
+          }
+          if (newVal != null) {
+            new countUp(attrs.id, oldVal, newVal, numDecimals, 4, opts).start();
           }
         });
       }
