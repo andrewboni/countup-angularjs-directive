@@ -1,6 +1,6 @@
 {
   "name": "countup-angularjs-directive",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/andrewboni/countup-angularjs-directive",
   "description": "An AngularJS directive for the countUp.js library.",
   "main": "dist/countup-angularjs-directive.min.js",
