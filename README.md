@@ -57,5 +57,8 @@ This directive is a work in progress- there are probably a ton of optimizations 
 # Development
 Run `grunt dev` to build/uglify the `dist` files from `src` and watch `src` files for changes. Run `grunt build` to merely build and uglify from `src`.
 
+# Server
+Run `http-server` to get a lightweight server up and running.
+
 #MIT License
 

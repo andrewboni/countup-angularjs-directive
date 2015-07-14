@@ -9,16 +9,21 @@
       $scope.fruits = [
         {
           name: "Apples",
-          count: 1893
+          count: 159
         }, {
           name: "Bananas",
-          count: 2984
+          count: 1824
+        }, {
+          name: "Oranges",
+          count: 28947
         }
       ];
       return $scope.updateCount = function() {
-        $scope.specialfruit.count += 8429;
-        $scope.fruits[0].count += 2848;
-        return $scope.fruits[1].count += 3848;
+        $scope.specialfruit.count += Math.random() * 9999;
+        $scope.fruits[0].count += Math.random() * 9999;
+        $scope.fruits[1].count += Math.random() * 9999;
+        $scope.fruits[2].count += Math.random() * 9999;
+        return
       };
     }
   ]);

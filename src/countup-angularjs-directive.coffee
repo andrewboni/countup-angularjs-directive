@@ -6,16 +6,15 @@ angular.module('ngCountup', [])
   require: 'ngModel' # Must have an ngModel to get the countUp value from
   scope:
     ngModel: '='
-    numDecimals: '='
   link: (scope, element, attrs) ->
-    opts =
-      prefix: attrs.prefix or ''
-      suffix: attrs.suffix or ''
-
+    opts = {}
+    if attrs.prefix?
+      opts.prefix = attrs.prefix
+    if attrs.suffix?
+      opts.suffix = attrs.suffix
     numDecimals = 0
     if attrs.numDecimals? and attrs.numDecimals >= 0
       numDecimals = attrs.numDecimals
-
     scope.$parent.$watch attrs.ngModel, (newVal, oldVal) ->
       newVal ?= 0
       oldVal ?= 0

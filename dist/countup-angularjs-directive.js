@@ -5,15 +5,17 @@
       restrict: 'A',
       require: 'ngModel',
       scope: {
-        ngModel: '=',
-        numDecimals: '='
+        ngModel: '='
       },
       link: function(scope, element, attrs) {
         var numDecimals, opts;
-        opts = {
-          prefix: attrs.prefix || '',
-          suffix: attrs.suffix || ''
-        };
+        opts = {};
+        if (attrs.prefix != null) {
+          opts.prefix = attrs.prefix;
+        }
+        if (attrs.suffix != null) {
+          opts.suffix = attrs.suffix;
+        }
         numDecimals = 0;
         if ((attrs.numDecimals != null) && attrs.numDecimals >= 0) {
           numDecimals = attrs.numDecimals;
