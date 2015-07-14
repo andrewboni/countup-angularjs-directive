@@ -18,5 +18,5 @@ angular.module('ngCountup', [])
     scope.$parent.$watch attrs.ngModel, (newVal, oldVal) ->
       newVal ?= 0
       oldVal ?= 0
-      if newVal?
+      if newVal? and newVal isnt oldVal
         new CountUp(attrs.id, oldVal, newVal, numDecimals, 4, opts).start()
