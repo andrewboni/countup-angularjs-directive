@@ -7,16 +7,16 @@ angular.module('ngCountup', [])
   scope:
     ngModel: '='
   link: (scope, element, attrs) ->
-    opts = {}
-    if attrs.prefix?
-      opts.prefix = attrs.prefix
-    if attrs.suffix?
-      opts.suffix = attrs.suffix  
-    numDecimals = 0
-    if attrs.numDecimals? and attrs.numDecimals >= 0
-      numDecimals = attrs.numDecimals
     scope.$parent.$watch attrs.ngModel, (newVal, oldVal) ->
-      newVal ?= 0
-      oldVal ?= 0
       if newVal? and newVal isnt oldVal
+        opts = {}
+        if attrs.prefix?
+          opts.prefix = attrs.prefix
+        if attrs.suffix?
+          opts.suffix = attrs.suffix  
+        numDecimals = 0
+        if attrs.numDecimals? and attrs.numDecimals >= 0
+          numDecimals = attrs.numDecimals
+        newVal ?= 0
+        oldVal ?= 0
         new CountUp(attrs.id, oldVal, newVal, numDecimals, 4, opts).start()
