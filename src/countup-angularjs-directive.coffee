@@ -11,7 +11,7 @@ angular.module('ngCountup', [])
     if attrs.prefix?
       opts.prefix = attrs.prefix
     if attrs.suffix?
-      opts.suffix = attrs.suffix
+      opts.suffix = attrs.suffix  
     numDecimals = 0
     if attrs.numDecimals? and attrs.numDecimals >= 0
       numDecimals = attrs.numDecimals
@@ -20,4 +20,3 @@ angular.module('ngCountup', [])
       oldVal ?= 0
       if newVal?
         new CountUp(attrs.id, oldVal, newVal, numDecimals, 4, opts).start()
-      return

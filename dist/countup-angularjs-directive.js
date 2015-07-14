@@ -28,7 +28,7 @@
             oldVal = 0;
           }
           if (newVal != null) {
-            new CountUp(attrs.id, oldVal, newVal, numDecimals, 4, opts).start();
+            return new CountUp(attrs.id, oldVal, newVal, numDecimals, 4, opts).start();
           }
         });
       }
