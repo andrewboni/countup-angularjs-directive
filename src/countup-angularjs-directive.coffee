@@ -15,8 +15,11 @@ angular.module('ngCountup', [])
         if attrs.suffix?
           opts.suffix = attrs.suffix  
         numDecimals = 0
+        animationLength = 4
         if attrs.numDecimals? and attrs.numDecimals >= 0
           numDecimals = attrs.numDecimals
+        if attrs.animationLength? and isFinite attrs.animationLength
+          animationLength = attrs.animationLength
         newVal ?= 0
         oldVal ?= 0
-        new CountUp(attrs.id, oldVal, newVal, numDecimals, 4, opts).start()
+        new CountUp(attrs.id, oldVal, newVal, numDecimals, animationLength, opts).start()
