@@ -20,6 +20,14 @@ angular.module('ngCountup', [])
           numDecimals = attrs.numDecimals
         if attrs.animationLength? and isFinite attrs.animationLength
           animationLength = attrs.animationLength
+        if attrs.separator?
+          opts.separator = attrs.separator;
+        if attrs.decimal?
+          opts.decimal = attrs.decimal;
+        if attrs.useGrouping?
+          opts.useGrouping = if attrs.useGrouping == 'true' then true else false
+        if attrs.useEasing?
+          opts.useEasing = if attrs.useEasing == 'true' then true else false
         newVal ?= 0
         oldVal ?= 0
         new CountUp(attrs.id, oldVal, newVal, numDecimals, animationLength, opts).start()
