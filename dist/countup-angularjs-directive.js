@@ -26,18 +26,6 @@
             if ((attrs.animationLength != null) && isFinite(attrs.animationLength)) {
               animationLength = attrs.animationLength;
             }
-            if (attrs.separator != null) {
-              opts.separator = attrs.separator;
-            }
-            if (attrs.decimal != null) {
-              opts.decimal = attrs.decimal;
-            }
-            if (attrs.useGrouping != null) {
-              opts.useGrouping = attrs.useGrouping === 'true' ? true : false;
-            }
-            if (attrs.useEasing != null) {
-              opts.useEasing = attrs.useEasing === 'true' ? true : false;
-            }
             if (newVal == null) {
               newVal = 0;
             }
